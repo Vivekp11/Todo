@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'addbutton.css' %}">
+    <div class="card-container">
+        <div class="row">
+            {% for i in result %}
+        <div class="shadow card text-white bg-primary mb-3" style="max-width: 18rem; margin-left:50px;">
+            <div class="card-header">{{ i.priority }}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ i.name }}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h6 class="card-title">{{ i.date }}</h6>
+                <a class="btn btn-warning" href="{% url 'todoapp:delete' i.id %}">Done</a>
+                <a class="btn btn-success" href="{% url 'todoapp:cbvdetail' i.id %}">View</a>
+                <a class="btn btn-danger" href="{% url 'todoapp:update' i.id %}">Update</a>
+
+
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+    <a href="{% url 'todoapp:add' %}">
+    <button type="button" class="btn btn-primary btn-lg">ADD</button>
+    </a>
+
+
+
+
+{% endblock %}
+
+
+

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post">
+    {% csrf_token %}
+    <div class=" card w-50">
+        <div class="card-body">
+            <h5 class="card-title">COMPLETED</h5>
+            <p class="card-text"> I'm glad we could successfully complete it.</p>
+            <input type="submit" style="background-color: #007bff; ">
+        </div>
+    </div>
+</form>
+{% endblock %}

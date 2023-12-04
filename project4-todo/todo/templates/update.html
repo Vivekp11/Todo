@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+    <div class="container">
+        <h1>Task Entry</h1>
+        <form method="POST" class="mb-3 shadow">
+            {% csrf_token %}
+            <label for="name">Update Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter the name to be update" required>
+            <label for="name">Update Priority:</label>
+            <input type="text" id="priority" name="priority" placeholder="Enter the priority to be update" required>
+            <label for="name">Update Date:</label>
+            <input type="date" id="date" name="date" placeholder="Enter the date to be update" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

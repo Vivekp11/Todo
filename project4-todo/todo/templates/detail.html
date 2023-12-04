@@ -1,0 +1,16 @@
+
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="shadow card text-white bg-primary mb-3" style="max-width: 18rem; margin-left:50px;">
+            <div class="card-header">{{ task.priority }}</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ task.name }}</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h6 class="card-title">{{ task.date }}</h6>
+                <a class="btn btn-warning" href="{% url 'todoapp:delete' task.id %}">Done</a>
+                <a class="btn btn-danger" href="{% url 'todoapp:update' task.id %}">Update</a>
+
+            </div>
+        </div>
+{% endblock %}
